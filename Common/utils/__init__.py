@@ -1,2 +1,2 @@
 from .bus import Bus, Command, CommandHandler, Query, QueryHandler
-from .uuid import *
+from .uuid import pkgen

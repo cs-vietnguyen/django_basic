@@ -26,5 +26,4 @@ class SignInAPI(APIView):
 
         data_response = __bus.dispatch(SignInCommand(**request_data.data))
 
-
         return reponses.success(data_response)

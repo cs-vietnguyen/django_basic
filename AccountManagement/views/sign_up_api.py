@@ -26,4 +26,4 @@ class SignUpAPI(APIView):
 
         __bus.dispatch(SignUpCommand(sign_up_dto))
 
-        return reponses.success("Thành công nha", {})
+        return reponses.success("Thành công nha")

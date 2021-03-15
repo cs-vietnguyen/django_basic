@@ -4,13 +4,14 @@ from drf_yasg.utils import swagger_serializer_method
 
 from AccountManagement.domain.models import Account
 
+
 class AccountSerializer(serializers.ModelSerializer):
     access_token = serializers.SerializerMethodField()
 
     class Meta:
         model = Account
         fields = [
-            # "id",
+            "id",
             "first_name",
             "last_name",
             "username",

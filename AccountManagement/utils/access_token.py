@@ -5,6 +5,7 @@ from django.conf import settings
 
 ACCESS_TOKEN_DUARATION = 86400 * 365
 
+
 class AccessToken:
     def __init__(self, sub: str) -> None:
         self.sub = sub
@@ -19,7 +20,9 @@ class AccessToken:
             "iat": current_time,
             "jti": str(uuid.uuid4()),
         }
-        return jwt.encode(settings.JWT_HEADER, payload, settings.JWT_PRIVATE_SIGNATURE).decode("utf-8") 
+        return jwt.encode(
+            settings.JWT_HEADER, payload, settings.JWT_PRIVATE_SIGNATURE
+        ).decode("utf-8")
 
     def current_time(self):
         return int(time.time())

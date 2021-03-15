@@ -1,14 +1,14 @@
 from django.db import models
-import uuid
 from django.contrib.auth.hashers import make_password
 
 from Common.domain.models import BaseModel
 from Common.utils import pkgen
+from AccountManagement.domain.contants import ADMIN, USER
 
 
 class AccountTypeChoises(models.IntegerChoices):
-    ADMIN = 0, "Admin"
-    USER = 1, "User"
+    ADMIN = ADMIN, "Admin"
+    USER = USER, "User"
 
 
 class Account(BaseModel):
@@ -24,9 +24,10 @@ class Account(BaseModel):
     type = models.IntegerField(
         default=AccountTypeChoises.USER, choices=AccountTypeChoises.choices
     )
+    status = models.IntegerField(default=1)
 
     class Meta:
-        db_table = 'account'
+        db_table = "account"
 
     @property
     def full_name(self):

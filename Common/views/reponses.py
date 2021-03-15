@@ -6,7 +6,7 @@ def success(data):
     # localize message here
     # custom data here
     return JsonResponse(
-        {"data": data},
+        data,
         safe=False,
         status=status.HTTP_200_OK,
     )

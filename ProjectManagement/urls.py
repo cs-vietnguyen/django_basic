@@ -53,6 +53,7 @@ urlpatterns = [
 
 account_urls = [
     url(r"accounts/", include("AccountManagement.urls")),
+    url(r"accounts/", include("UserContentManagement.urls")),
 ]
 
 urlpatterns = urlpatterns + account_urls
