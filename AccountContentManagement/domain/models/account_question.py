@@ -4,7 +4,7 @@ from Common.domain.models import BaseModel
 from Common.utils import pkgen
 
 
-class AccountContent(BaseModel):
+class AccountQuestion(BaseModel):
     id = models.UUIDField(max_length=40, primary_key=True, default=pkgen)
     account = models.ForeignKey(
         "AccountManagement.Account",

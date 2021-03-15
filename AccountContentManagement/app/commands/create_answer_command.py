@@ -1,6 +1,6 @@
 from Common.utils import Command, CommandHandler
-from UserContentManagement.app.dtos import CreateQuestionDto
-from UserContentManagement.domain.models import AccountContent
+from AccountContentManagement.app.dtos import CreateQuestionDto
+from AccountContentManagement.domain.models import AccountQuestion
 from ContentManagement.domain.models import Answer
 
 
@@ -19,7 +19,7 @@ class CreateAnswerCommand(Command):
 
 class CreateAnswerCommandHandler(CommandHandler):
     def handle(self, command: CreateAnswerCommand):
-        account_question = AccountContent.objects.get(
+        account_question = AccountQuestion.objects.get(
             account__id=command.account_id, question__id=command.question_id
         )
         Answer.objects.create(

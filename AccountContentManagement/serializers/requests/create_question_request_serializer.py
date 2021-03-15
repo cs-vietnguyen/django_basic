@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from UserContentManagement.app.dtos import CreateQuestionDto
+from AccountContentManagement.app.dtos import CreateQuestionDto
 
 
 class CreateQuestionRequestSerializer(serializers.Serializer):

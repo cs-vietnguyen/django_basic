@@ -1,2 +1,0 @@
-from .account_content_resouce_serializer import AccountContentResourceSerializer
-from .account_content_serializer import AccountContentSerializer

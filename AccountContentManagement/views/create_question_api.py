@@ -1,17 +1,17 @@
-from UserContentManagement.domain.models.account_content import AccountContent
+from AccountContentManagement.domain.models import AccountQuestion
 from drf_yasg import openapi
 from rest_framework.views import APIView
 from drf_yasg.utils import swagger_auto_schema
 
 from AccountManagement.authentication import TokenAuthentication
 from AccountManagement.permissions import TokenAuthenticatedShouldAwareRequestedUser
-from UserContentManagement.serializers import (
-    AccountContentSerializer,
-    AccountContentResourceSerializer,
+from AccountContentManagement.serializers import (
+    AccountQuestionSerializer,
+    AccountQuestionResourceSerializer,
 )
-from UserContentManagement.serializers.requests import CreateQuestionRequestSerializer
-from UserContentManagement.app.dtos import CreateQuestionDto
-from UserContentManagement.app.commands import CreateAccountQuestionCommand
+from AccountContentManagement.serializers.requests import CreateQuestionRequestSerializer
+from AccountContentManagement.app.dtos import CreateQuestionDto
+from AccountContentManagement.app.commands import CreateAccountQuestionCommand
 from Common.views import reponses
 from Common.utils import Bus
 
@@ -58,14 +58,14 @@ class CreateQuestionAPI(APIView):
                 type=openapi.TYPE_STRING,
             ),
         ],
-        responses={200: AccountContentSerializer},
+        responses={200: AccountQuestionSerializer},
     )
     def get(self, request, *arg, **karg):
         request_data = CreateQuestionRequestSerializer(data=request.data)
         request_data.is_valid()
 
-        questions = AccountContentResourceSerializer(
-            AccountContent.objects.filter(account__id=request.user), many=True
+        questions = AccountQuestionResourceSerializer(
+            AccountQuestion.objects.filter(account__id=request.user), many=True
         ).data
         data_response = {"data": {"account": request.user, "questions": questions}}
 

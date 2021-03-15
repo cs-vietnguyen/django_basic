@@ -4,9 +4,9 @@ from drf_yasg.utils import swagger_auto_schema
 
 from AccountManagement.authentication import TokenAuthentication
 from AccountManagement.permissions import TokenAuthenticatedShouldAwareRequestedUser
-from UserContentManagement.serializers.requests import CreateAnswerRequestSerializer
-from UserContentManagement.app.dtos import CreateAnswerDto
-from UserContentManagement.app.commands import CreateAnswerCommand
+from AccountContentManagement.serializers.requests import CreateAnswerRequestSerializer
+from AccountContentManagement.app.dtos import CreateAnswerDto
+from AccountContentManagement.app.commands import CreateAnswerCommand
 from Common.views import reponses
 from Common.utils import Bus
 
@@ -54,7 +54,7 @@ class CreateAnswerAPI(APIView):
     #             type=openapi.TYPE_STRING,
     #         ),
     #     ],
-    #     responses={200: AccountContentSerializer},
+    #     responses={200: AccountQuestionSerializer},
     # )
     # def get(self, request, *arg, **karg):
     #     pass

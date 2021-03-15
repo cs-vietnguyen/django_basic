@@ -1,7 +1,7 @@
 from Common.utils import Command, CommandHandler
 from AccountManagement.domain.models import Account
-from UserContentManagement.app.dtos import CreateQuestionDto
-from UserContentManagement.domain.models import AccountContent
+from AccountContentManagement.app.dtos import CreateQuestionDto
+from AccountContentManagement.domain.models import AccountQuestion
 from ContentManagement.domain.models import Question
 
 
@@ -20,4 +20,4 @@ class CreateAccountQuestionCommandHandler(CommandHandler):
         question = Question.objects.create(
             content=command.dto.content, type=command.dto.type
         )
-        AccountContent.objects.create(account=account, question=question)
+        AccountQuestion.objects.create(account=account, question=question)

@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from UserContentManagement.views import CreateQuestionAPI, CreateAnswerAPI
+from AccountContentManagement.views import CreateQuestionAPI, CreateAnswerAPI
 
 urlpatterns = [
     url(r"(?P<account_id>[\w-]+)/questions/$", CreateQuestionAPI.as_view()),

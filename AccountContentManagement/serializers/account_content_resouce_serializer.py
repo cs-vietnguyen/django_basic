@@ -1,12 +1,12 @@
 from rest_framework import serializers
 
-from UserContentManagement.domain.models import AccountContent
+from AccountContentManagement.domain.models import AccountQuestion
 from ContentManagement.serializers import QuestionResourceSerializer
 
 
-class AccountContentResourceSerializer(serializers.ModelSerializer):
+class AccountQuestionResourceSerializer(serializers.ModelSerializer):
     question = QuestionResourceSerializer()
 
     class Meta:
-        model = AccountContent
+        model = AccountQuestion
         fields = ["id", "question"]
