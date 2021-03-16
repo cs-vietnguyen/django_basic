@@ -1,3 +1,5 @@
 from .account_content_resouce_serializer import AccountQuestionResourceSerializer
 from .account_content_serializer import AccountQuestionSerializer
 from .user_answer_resource_serializer import UserAnswerResourceSerializer
+from .user_answer_vote_resource_serializer import UserAnswerVoteResourceSerializer
+from .user_question_vote_resource_serializer import UserQuestionVoteResourceSerializer
