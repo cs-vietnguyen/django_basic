@@ -83,11 +83,12 @@ WSGI_APPLICATION = "ProjectManagement.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "django_basic",  # get_os_env("MYSQL_DATABASE"),
-        "USER": "django_basic",  # get_os_env("MYSQL_USER"),
-        "PASSWORD": "userpass01",  # get_os_env("MYSQL_PASSWORD"),
-        "HOST": "0.0.0.0",  # get_os_env("MYSQL_HOST"),
-        "PORT": "3306",  # get_os_env("MYSQL_PORT"),
+        "NAME": get_os_env("MYSQL_DATABASE"),
+        "USER": get_os_env("MYSQL_USER"),
+        "PASSWORD": get_os_env("MYSQL_PASSWORD"),
+        "HOST": get_os_env("MYSQL_HOST"),
+        "PORT": get_os_env("MYSQL_PORT"),
+        "OPTIONS": {"charset": "utf8mb4", "init_command": "SET NAMES utf8mb4",},
     }
 }
 
