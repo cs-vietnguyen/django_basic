@@ -4,7 +4,7 @@
 
 Docker & Docker compose
 
-# Architectural
+# Project's Architectural
 
 Command Query Separation (CQS)
 
