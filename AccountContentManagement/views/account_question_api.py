@@ -18,7 +18,7 @@ from Common.views import reponses
 from Common.utils import Bus
 
 
-class CreateQuestionAPI(APIView):
+class AccountQuestionAPI(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [TokenAuthenticatedShouldAwareRequestedUser]
     __bus: Bus = Bus()
