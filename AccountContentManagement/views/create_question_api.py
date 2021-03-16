@@ -9,7 +9,9 @@ from AccountContentManagement.serializers import (
     AccountQuestionSerializer,
     AccountQuestionResourceSerializer,
 )
-from AccountContentManagement.serializers.requests import CreateQuestionRequestSerializer
+from AccountContentManagement.serializers.requests import (
+    CreateQuestionRequestSerializer,
+)
 from AccountContentManagement.app.dtos import CreateQuestionDto
 from AccountContentManagement.app.commands import CreateAccountQuestionCommand
 from Common.views import reponses

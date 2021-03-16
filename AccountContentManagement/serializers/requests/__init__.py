@@ -1,2 +1,4 @@
 from .create_question_request_serializer import CreateQuestionRequestSerializer
 from .create_answer_request_serializer import CreateAnswerRequestSerializer
+from .user_question_vote_request_serializer import UserQuestionVoteRequestSerializer
+from .user_answer_vote_request_serializer import UserAnswerVoteRequestSerializer

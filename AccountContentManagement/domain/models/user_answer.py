@@ -4,19 +4,19 @@ from Common.domain.models import BaseModel
 from Common.utils import pkgen
 
 
-class AccountQuestion(BaseModel):
+class UserAnswer(BaseModel):
     id = models.UUIDField(max_length=40, primary_key=True, default=pkgen)
     account = models.ForeignKey(
         "AccountManagement.Account",
         on_delete=models.CASCADE,
-        related_name="questions",
+        related_name="answers",
     )
-    question = models.OneToOneField(
-        "ContentManagement.Question",
+    answer = models.OneToOneField(
+        "ContentManagement.Answer",
         on_delete=models.CASCADE,
         related_name="account",
     )
     status = models.IntegerField(default=1)
 
     class Meta:
-        db_table = "account_question"
+        db_table = "user_answer"

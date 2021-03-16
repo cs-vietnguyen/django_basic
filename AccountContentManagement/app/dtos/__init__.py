@@ -1,2 +1,4 @@
 from .create_question_dto import CreateQuestionDto
 from .create_answer_dto import CreateAnswerDto
+from .user_question_vote_dto import UserQuestionVoteDto
+from .user_answer_vote_dto import UserAnswerVoteDto

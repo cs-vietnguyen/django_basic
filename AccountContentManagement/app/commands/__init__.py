@@ -1,2 +1,4 @@
 from .create_account_question_command import CreateAccountQuestionCommand
 from .create_answer_command import CreateAnswerCommand
+from .user_question_vote_command import UserQuestionVoteCommand
+from .user_answer_vote_command import UserAnswerVoteCommand

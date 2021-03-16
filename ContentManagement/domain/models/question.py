@@ -18,6 +18,7 @@ class Question(BaseModel):
     type = models.IntegerField(
         default=QuestionTypeChoises.SELECT, choices=QuestionTypeChoises.choices
     )
+    tag = models.CharField(max_length=50, null=True, blank=True)
 
     class Meta:
         db_table = "question"

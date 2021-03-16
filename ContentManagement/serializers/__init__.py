@@ -1,1 +1,2 @@
 from .question_resource_serializer import QuestionResourceSerializer
+from .answer_resource_serializer import AnswerResourceSerializer
