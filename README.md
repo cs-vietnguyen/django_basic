@@ -1,5 +1,16 @@
 # Home test backend
 
+# Prepare
+
+Docker & Docker compose
+
+# Architectural
+
+Command Query Separation (CQS)
+Independent (loose-coupling) modules
+Independent (loose-coupling) services
+Static typing for Python
+
 # Quickstart
 
 1.
